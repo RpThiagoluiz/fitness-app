@@ -10,13 +10,8 @@ export function ContainerGradient({ children }: Props) {
 
   return (
     <Container
-      start={{ x: 0.1, y: 0.2 }}
-      colors={[
-        colors.attention,
-        colors.attention_light,
-        colors.secondary,
-        colors.secondary_light,
-      ]}
+      start={{ x: 0.1, y: 0.1 }}
+      colors={[colors.primary, colors.secondary, colors.tertiary]}
     >
       {children}
     </Container>
