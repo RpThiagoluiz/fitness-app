@@ -11,7 +11,8 @@
       "@assets/*": ["src/assets/*"],
       "@services/*": ["src/services/*"],
       "@theme/*": ["src/theme/*"],
-      "@routes/*": ["src/routes/*"]
+      "@routes/*": ["src/routes/*"],
+      "@store/*": ["src/store/*"]
     }
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],
