@@ -10,7 +10,8 @@
       "@utils/*": ["src/utils/*"],
       "@assets/*": ["src/assets/*"],
       "@services/*": ["src/services/*"],
-      "@theme/*": ["src/theme/*"]
+      "@theme/*": ["src/theme/*"],
+      "@routes/*": ["src/routes/*"]
     }
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],

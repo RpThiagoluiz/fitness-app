@@ -11,6 +11,7 @@ import { Loading } from '@components/Loading';
 import { ContainerGradient } from '@components/ContainerGradient';
 import { Home } from '@screens/Home';
 import lightTheme from '@theme/global/lightTheme';
+import { Routes } from 'src/routes/app.routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,7 +28,8 @@ export default function App() {
   return (
     <ThemeProvider theme={lightTheme}>
       <StatusBar translucent animated backgroundColor="transparent" />
-      <Home />
+      {/* <Home /> */}
+      <Routes />
     </ThemeProvider>
   );
 }
