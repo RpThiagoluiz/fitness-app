@@ -28,8 +28,8 @@ export default function App() {
   return (
     <ThemeProvider theme={lightTheme}>
       <StatusBar translucent animated backgroundColor="transparent" />
-      {/* <Home /> */}
-      <Routes />
+      <Home />
+      {/* <Routes /> */}
     </ThemeProvider>
   );
 }

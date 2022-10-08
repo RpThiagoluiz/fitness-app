@@ -1,15 +1,23 @@
+import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
 
 export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.text};
   font-family: ${({ theme }) => theme.fonts.semiBold};
   text-shadow: ${({ theme }) => `1px 1px 2px ${theme.colors.secondary}`};
-  font-size: 75px;
-  line-height: 80px;
+  font-size: ${RFValue(75)}px;
+  line-height: ${RFValue(80)}px;
 `;
 
 export const ImageLogo = styled.Image`
-  width: 220px;
-  height: 220px;
+  width: ${RFPercentage(40)}px;
+  height: ${RFPercentage(40)}px;
   object-fit: contain;
+`;
+
+export const ButtonText = styled.Text`
+  color: ${({ theme }) => theme.colors.black};
+  text-align: center;
+  font-size: ${RFValue(15)}px;
+  line-height: ${RFValue(30)}px;
 `;
