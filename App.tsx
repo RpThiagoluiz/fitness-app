@@ -26,10 +26,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={lightTheme}>
-      <ContainerGradient>
-        <StatusBar translucent animated backgroundColor="transparent" />
-        <Home />
-      </ContainerGradient>
+      <StatusBar translucent animated backgroundColor="transparent" />
+      <Home />
     </ThemeProvider>
   );
 }
