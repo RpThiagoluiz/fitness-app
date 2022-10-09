@@ -9,8 +9,6 @@ export type RootStackParamList = {
   Home: undefined;
   Dashboard: undefined;
   Exercises: undefined;
-  // import { NavigatorScreenParams } from '@react-navigation/native'
-  // TypeScreen: NavigatorScreenParams<TypeScreenProps>
 };
 
 export type RootTabScreenProps<T extends keyof RootStackParamList> =
@@ -20,7 +18,11 @@ const Tab = createBottomTabNavigator<RootStackParamList>();
 
 export const TabsRoutes = () => {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Tab.Screen name="Dashboard" component={Dashboard} />
       <Tab.Screen name="Exercises" component={Exercises} />
     </Tab.Navigator>
