@@ -8,8 +8,6 @@ import {
 } from '@expo-google-fonts/inter';
 import { ThemeProvider } from 'styled-components';
 import { Loading } from '@components/Loading';
-import { ContainerGradient } from '@components/ContainerGradient';
-import { Home } from '@screens/Home';
 import lightTheme from '@theme/global/lightTheme';
 import { Routes } from 'src/routes/app.routes';
 
@@ -28,8 +26,7 @@ export default function App() {
   return (
     <ThemeProvider theme={lightTheme}>
       <StatusBar translucent animated backgroundColor="transparent" />
-      <Home />
-      {/* <Routes /> */}
+      <Routes />
     </ThemeProvider>
   );
 }

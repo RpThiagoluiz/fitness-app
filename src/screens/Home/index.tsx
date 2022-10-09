@@ -5,7 +5,7 @@ import { useAuthStore } from 'src/store/useAuthStore';
 import { Title, ImageLogo, ButtonText } from './styles';
 
 export const Home = () => {
-  const handleLogin = useAuthStore((state: any) => state.login);
+  const handleLogin = useAuthStore((state) => state.login);
 
   return (
     <ContainerGradient>
