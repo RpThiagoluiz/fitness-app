@@ -4,11 +4,11 @@ import { useAuthStore } from '@store/useAuthStore';
 import { TabsRoutes } from './TabsRoutes';
 
 export const Routes = () => {
-  const { auth } = useAuthStore.getState();
+  const { isLogged } = useAuthStore.getState();
 
   return (
     <NavigationContainer>
-      {auth ? <TabsRoutes /> : <Home />}
+      {isLogged ? <TabsRoutes /> : <Home />}
     </NavigationContainer>
   );
 };

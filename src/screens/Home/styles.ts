@@ -16,8 +16,9 @@ export const ImageLogo = styled.Image`
 `;
 
 export const ButtonText = styled.Text`
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.black_medium};
   text-align: center;
-  font-size: ${RFValue(15)}px;
+  font-family: ${({ theme }) => theme.fonts.bold};
+  font-size: ${RFValue(18)}px;
   line-height: ${RFValue(30)}px;
 `;

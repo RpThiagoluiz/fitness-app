@@ -1,16 +1,34 @@
-import create from 'zustand';
+import create, { StateCreator } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-interface AuthStore {
-  auth: boolean;
+interface AuthState {
+  isLogged: boolean;
   login: () => void;
   logout: () => void;
 }
 
-export const useAuthStore = create<AuthStore>((set) => ({
-  auth: false,
-  login: async () => {
-    console.log('AuthStore auth - login');
-    set({ auth: true });
-  },
-  logout: () => set((_) => ({ auth: false })),
-}));
+const store: StateCreator<
+  AuthState,
+  [['zustand/devtools', never], ['zustand/persist', unknown]],
+  [],
+  AuthState
+> = (set) => ({
+  isLogged: false,
+  login: () => set(() => ({ isLogged: true })),
+  logout: () =>
+    set({
+      isLogged: false,
+    }),
+});
+const storeName = 'AuthStore-FiT';
+
+export const useAuthStore = create<AuthState>()(
+  devtools(
+    persist(store, {
+      name: storeName,
+      getStorage: () => AsyncStorage,
+    }),
+    { name: storeName, enabled: __DEV__, trace: true }
+  )
+);
