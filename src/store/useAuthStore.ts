@@ -10,7 +10,7 @@ interface AuthState {
 
 const store: StateCreator<
   AuthState,
-  [['zustand/devtools', never], ['zustand/persist', unknown]],
+  [['zustand/persist', unknown]],
   [],
   AuthState
 > = (set) => ({
@@ -24,11 +24,8 @@ const store: StateCreator<
 const storeName = 'AuthStore-FiT';
 
 export const useAuthStore = create<AuthState>()(
-  devtools(
-    persist(store, {
-      name: storeName,
-      getStorage: () => AsyncStorage,
-    }),
-    { name: storeName, enabled: __DEV__, trace: true }
-  )
+  persist(store, {
+    name: storeName,
+    getStorage: () => AsyncStorage,
+  })
 );
