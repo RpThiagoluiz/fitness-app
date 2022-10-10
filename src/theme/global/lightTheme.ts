@@ -18,9 +18,8 @@ export default {
   },
 
   fonts: {
-    regular: 'Inter_400Regular',
-    semiBold: 'Inter_600SemiBold',
-    bold: 'Inter_700Bold',
-    black: 'Inter_900Bold',
+    regular: 'Urbanist_Regular',
+    bold: 'Silkscreen_Bold',
+    logo: 'BroadwayD',
   },
 };

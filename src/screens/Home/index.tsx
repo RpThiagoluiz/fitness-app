@@ -20,7 +20,7 @@ export const Home = ({
 
   return (
     <ContainerGradient>
-      <Title>TiF</Title>
+      <Title>V-TiF</Title>
       <ImageLogo source={Logo} />
       <ButtonTouchableOpacity activeOpacity={0.8} onPress={handleLogin}>
         <ButtonText>Entrar</ButtonText>
