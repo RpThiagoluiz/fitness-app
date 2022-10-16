@@ -1,7 +1,10 @@
+import { BodyPartCard } from '@components/BodyPartCard';
 import { ButtonTouchableOpacity } from '@components/ButtonTouchableOpacity';
+import { ContainerPage } from '@components/ContainerPage';
 import { RootTabScreenProps } from '@routes/TabsRoutes';
 import { useAuthStore } from '@store/useAuthStore';
-import { Container, Title } from './styles';
+import { fakeBodyPartsData } from 'src/mocks/fakeBodyPartsData';
+import { WrapperButton, Title } from './styles';
 
 export const Dashboard = ({
   navigation: { navigate },
@@ -15,10 +18,16 @@ export const Dashboard = ({
   };
 
   return (
-    <Container>
-      <ButtonTouchableOpacity activeOpacity={0.8} onPress={handleLogout}>
-        <Title>Dashboard</Title>
-      </ButtonTouchableOpacity>
-    </Container>
+    <ContainerPage>
+      {fakeBodyPartsData.map((bodyPart) => (
+        <BodyPartCard key={bodyPart} bodyPart={bodyPart} />
+      ))}
+
+      <WrapperButton>
+        <ButtonTouchableOpacity activeOpacity={0.8} onPress={handleLogout}>
+          <Title>LogOut</Title>
+        </ButtonTouchableOpacity>
+      </WrapperButton>
+    </ContainerPage>
   );
 };

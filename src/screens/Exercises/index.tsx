@@ -1,3 +1,4 @@
+import { ContainerPage } from '@components/ContainerPage';
 import { ExerciseCard } from '@components/ExerciseCard';
 import { RootTabScreenProps } from '@routes/TabsRoutes';
 import { fakeExercisesData } from 'src/mocks/fakeExercisesData';
@@ -15,8 +16,8 @@ export const Exercises = ({}: RootTabScreenProps<'Exercises'>) => {
   console.log({ Juvenal: filterByName('deep push up') });
 
   return (
-    <Container>
+    <ContainerPage>
       <ExerciseCard data={fakeExercisesData[0]} />
-    </Container>
+    </ContainerPage>
   );
 };

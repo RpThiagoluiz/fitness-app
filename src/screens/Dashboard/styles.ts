@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const WrapperButton = styled.View`
   flex: 1;
-  align-items: center;
-  justify-content: center;
+  align-self: center;
+  justify-content: flex-end;
 `;
 
 export const Title = styled.Text``;

@@ -1,11 +1,10 @@
-import React from 'react';
-
-import { Container, Title } from './styles';
+import { ContainerPage } from '@components/ContainerPage';
+import { Title } from './styles';
 
 export const WeekendExercises = () => {
   return (
-    <Container>
+    <ContainerPage>
       <Title>WeekendExercises</Title>
-    </Container>
+    </ContainerPage>
   );
 };
