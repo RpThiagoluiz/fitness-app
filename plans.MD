@@ -1,3 +1,5 @@
-Create card, and organize exercises by bodyPart.
-Applying navigation by bodyParts
-Add infinite scroll
+Perfil actions in dashboard.
+Dashboard, list of exercises body parts
+
+Exercises by body part
+Exercises Details
