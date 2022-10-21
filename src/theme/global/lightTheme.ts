@@ -15,6 +15,8 @@ export default {
     text: '#f0f2f5',
     black: '#000000',
     black_medium: '#1e1e1e',
+    gray: '#808080',
+    lightGray: '#F5F5F5',
   },
 
   fonts: {

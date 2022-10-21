@@ -18,7 +18,13 @@ export default function App() {
 
   return (
     <ThemeProvider theme={lightTheme}>
-      <StatusBar translucent animated backgroundColor="transparent" />
+      <StatusBar
+        translucent
+        animated
+        backgroundColor="transparent"
+        style="dark"
+        hideTransitionAnimation="slide"
+      />
       <Routes />
     </ThemeProvider>
   );
