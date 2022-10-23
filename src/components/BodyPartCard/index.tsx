@@ -1,15 +1,22 @@
-import React from 'react';
-
-import { Container, Title } from './styles';
+import { PressableButton, Title } from './styles';
 
 interface Props {
   bodyPart: string;
+  onPressBodyPart: (filterBy: string) => void;
+  isActive: boolean;
 }
 
-export const BodyPartCard = ({ bodyPart }: Props) => {
+export const BodyPartCard = ({
+  onPressBodyPart,
+  isActive,
+  bodyPart,
+}: Props) => {
   return (
-    <Container>
-      <Title>{bodyPart}</Title>
-    </Container>
+    <PressableButton
+      onPress={() => onPressBodyPart(bodyPart)}
+      isActive={isActive}
+    >
+      <Title isActive={isActive}>{bodyPart}</Title>
+    </PressableButton>
   );
 };
