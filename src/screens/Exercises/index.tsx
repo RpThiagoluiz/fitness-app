@@ -7,6 +7,7 @@ import { Divider } from '@components/Divider';
 import { LoadingMoreItens } from './components/LoadingMoreItens';
 import { fakeExercisesData } from 'src/mocks/fakeExercisesData';
 import { DividerWrapper } from './styles';
+import { FilterExercises } from './components/FilterExercises';
 
 export const Exercises = ({}: RootTabScreenProps<'Exercises'>) => {
   const initData = fakeExercisesData.slice(0, 5);
@@ -26,8 +27,9 @@ export const Exercises = ({}: RootTabScreenProps<'Exercises'>) => {
 
   return (
     <ContainerPage hasHeader screenTitle="Exercises">
+      <FilterExercises />
       <FlatList
-        ListHeaderComponent={<Text>HEADER List</Text>}
+        ListHeaderComponent={<Text>TODO HEADER</Text>}
         data={datas}
         renderItem={({ item }) => <ExerciseCard data={item} />}
         keyExtractor={(item) => item.id}
