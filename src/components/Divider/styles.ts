@@ -25,6 +25,25 @@ const sizeVertical = {
     `,
 };
 
+const sizeHorizontal = {
+  small: () =>
+    css`
+      height: 1px;
+      opacity: 0.5;
+    `,
+  normal: () =>
+    css`
+      height: 3px;
+    `,
+
+  large: () =>
+    css`
+      height: 5px;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+    `,
+};
+
 export const DividerVertical = styled.View<ColorProps>`
   background-color: ${({ theme, color }) =>
     color === 'default' ? theme.colors.black : theme.colors[color]};
@@ -32,8 +51,9 @@ export const DividerVertical = styled.View<ColorProps>`
   ${({ size }) => sizeVertical[size]};
 `;
 
-export const DividerHorizontal = styled.View`
-  background-color: ${({ theme }) => theme.colors.primary};
-  height: 2px;
+export const DividerHorizontal = styled.View<ColorProps>`
+  background-color: ${({ theme, color }) =>
+    color === 'default' ? theme.colors.black : theme.colors[color]};
   width: 100%;
+  ${({ size }) => sizeHorizontal[size]};
 `;

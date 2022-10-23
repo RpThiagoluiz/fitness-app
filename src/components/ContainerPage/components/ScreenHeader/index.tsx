@@ -10,7 +10,7 @@ export const ScreenHeader = ({ screenTitle }: Props) => {
   return (
     <Container
       start={{ x: 0.1, y: 0.1 }}
-      colors={[colors.tertiary, colors.secondary]}
+      colors={[colors.tertiary, colors.primary]}
     >
       <Title>{screenTitle}</Title>
     </Container>
