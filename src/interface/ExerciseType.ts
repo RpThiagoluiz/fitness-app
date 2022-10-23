@@ -6,3 +6,7 @@ export type ExercisesType = {
   name: string;
   target: string;
 };
+
+export type FormattedDataType = {
+  [key: string]: ExercisesType[];
+};

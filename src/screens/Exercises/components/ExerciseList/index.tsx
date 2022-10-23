@@ -1,31 +1,20 @@
-import { useState } from 'react';
 import { FlatList, Text } from 'react-native';
-import { fakeExercisesData } from 'src/mocks/fakeExercisesData';
 import { Divider } from '@components/Divider';
 import { ExerciseCard } from '@components/ExerciseCard';
 import { LoadingMoreItens } from '../LoadingMoreItens';
 import { DividerWrapper } from './styles';
+import { useManageExercises } from '@screens/Exercises/hooks/useManageExercises';
+import { useInfinityScrollExercises } from '@screens/Exercises/hooks/useInfinityScrollExercises';
 
 export const ExerciseList = () => {
-  const initData = fakeExercisesData.slice(0, 5);
-  const [perPage, setPerPage] = useState(5);
-  const [datas, setDatas] = useState(initData);
-  const [loading, setLoading] = useState(false);
-
-  const flatListonEndReached = () => {
-    setLoading(true);
-
-    setTimeout(() => {
-      setLoading(false);
-      setPerPage((prevState) => prevState + 5);
-      setDatas(fakeExercisesData.slice(0, perPage));
-    }, 500);
-  };
+  const { filterByBodyPart } = useManageExercises();
+  const { filteredData, flatListonEndReached, loading } =
+    useInfinityScrollExercises(filterByBodyPart);
 
   return (
     <FlatList
       ListHeaderComponent={<Text>TODO HEADER</Text>}
-      data={datas}
+      data={filteredData}
       renderItem={({ item }) => <ExerciseCard data={item} />}
       keyExtractor={(item) => item.id}
       contentContainerStyle={{
