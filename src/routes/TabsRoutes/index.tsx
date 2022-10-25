@@ -3,14 +3,14 @@ import {
   BottomTabScreenProps,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
+import { ExercisesStackRoutes } from '@routes/ExercisesStackRoutes';
 import { Dashboard } from '@screens/Dashboard';
-import { Exercises } from '@screens/Exercises';
 import { WeekendExercises } from '@screens/WeekendExercises';
 
 export type RootStackParamList = {
   Home: undefined;
   Dashboard: undefined;
-  Exercises: undefined;
+  ExercisesStackRoutes: undefined;
   WeekendExercises: undefined;
 };
 
@@ -37,8 +37,8 @@ export const TabsRoutes = () => {
         }}
       />
       <Tab.Screen
-        name="Exercises"
-        component={Exercises}
+        name="ExercisesStackRoutes"
+        component={ExercisesStackRoutes}
         options={{
           tabBarIcon: ({ focused }) => (
             <IconNavigation name="dingding" focused={focused} />

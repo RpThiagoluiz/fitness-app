@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 
-export const Container = styled.View`
+export const Container = styled.Pressable`
   align-items: center;
   flex-direction: row;
   background-color: ${({ theme }) => theme.colors.tertiary};

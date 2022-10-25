@@ -4,11 +4,12 @@ import { Container, ImageWrapper, Image, TitleWrapper, Title } from './styles';
 
 interface Props {
   data: ExercisesType;
+  onPress: (item: ExercisesType) => void;
 }
 
-export const ExerciseCard = ({ data }: Props) => {
+export const ExerciseCard = ({ onPress, data }: Props) => {
   return (
-    <Container>
+    <Container onPress={() => onPress(data)}>
       <Divider isVertical color="primary" size="large" />
       <ImageWrapper>
         <Image key={data.id} source={{ uri: data.gifUrl }} />
