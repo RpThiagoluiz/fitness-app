@@ -7,20 +7,32 @@ export const Container = styled.Pressable`
   background-color: ${({ theme }) => theme.colors.tertiary};
   border: ${({ theme }) => `1px ${theme.colors.success_light} solid`};
   border-radius: 10px;
-  height: 100px;
+  height: ${RFPercentage(12)}px;
 `;
 
 export const TitleWrapper = styled.View`
-  flex-wrap: wrap;
   padding: ${RFValue(10)}px;
   align-self: flex-start;
+  flex: 1;
 `;
 
 export const Title = styled.Text`
+  flex-grow: 1;
+  flex-direction: row;
   color: ${({ theme }) => theme.colors.gray};
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: ${RFValue(15)}px;
   line-height: ${RFValue(20)}px;
+`;
+
+export const Description = styled.Text`
+  flex-grow: 1;
+  flex-direction: row;
+  color: ${({ theme }) => theme.colors.gray};
+  opacity: 0.7;
+  font-family: ${({ theme }) => theme.fonts.regular};
+  font-size: ${RFValue(13)}px;
+  line-height: ${RFValue(15)}px;
 `;
 
 export const ImageWrapper = styled.View``;

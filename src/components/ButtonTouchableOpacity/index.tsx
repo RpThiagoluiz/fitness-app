@@ -3,7 +3,7 @@ import { useTheme } from 'styled-components';
 import { Container } from './styles';
 
 interface Props extends TouchableOpacityProps {
-  children: React.ReactElement;
+  children: React.ReactNode;
 }
 
 export function ButtonTouchableOpacity({ children, ...rest }: Props) {

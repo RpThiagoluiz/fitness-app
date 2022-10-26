@@ -21,7 +21,6 @@ export const ExercisesStackRoutes = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        // gestureEnabled: false,
       }}
     >
       <Stack.Screen name="Exercises" component={Exercises} />

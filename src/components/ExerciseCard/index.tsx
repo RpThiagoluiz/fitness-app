@@ -1,6 +1,13 @@
 import { Divider } from '@components/Divider';
 import { type ExercisesType } from '@interface/ExerciseType';
-import { Container, ImageWrapper, Image, TitleWrapper, Title } from './styles';
+import {
+  Container,
+  ImageWrapper,
+  Image,
+  TitleWrapper,
+  Title,
+  Description,
+} from './styles';
 
 interface Props {
   data: ExercisesType;
@@ -16,10 +23,9 @@ export const ExerciseCard = ({ onPress, data }: Props) => {
       </ImageWrapper>
       <Divider isVertical size="small" />
       <TitleWrapper>
-        <Title>
-          Target: {data.target} - {data.name}
-        </Title>
-        <Title>Body part: {data.bodyPart}</Title>
+        <Title>Target: {data.target}</Title>
+        <Description>{data.name}</Description>
+        <Description>Body part: {data.bodyPart}</Description>
       </TitleWrapper>
     </Container>
   );

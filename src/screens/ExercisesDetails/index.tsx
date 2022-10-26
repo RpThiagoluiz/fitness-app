@@ -1,14 +1,52 @@
+import Logo from '@assets/images/logo.webp';
+import { ContainerPage } from '@components/ContainerPage';
 import { type ExercisesStackRoutesProps } from '@routes/ExercisesStackRoutes';
-import { Container, Title } from './styles';
+import { ExerciseDescription } from './components/ExerciseDescription';
+import {
+  ImageBackgroundContainer,
+  ImageWrapper,
+  Image,
+  Title,
+  Button,
+  ButtonTitle,
+  ButtonIcon,
+} from './styles';
 
-export function ExercisesDetails({
+export const ExercisesDetails = ({
   route,
-}: ExercisesStackRoutesProps<'ExercisesDetails'>) {
+}: ExercisesStackRoutesProps<'ExercisesDetails'>) => {
   const exercise = route.params.exercise;
 
   return (
-    <Container>
-      <Title>{exercise.name}</Title>
-    </Container>
+    <ContainerPage>
+      <ImageBackgroundContainer
+        source={Logo}
+        resizeMode="contain"
+        imageStyle={{
+          width: '80%',
+          height: '80%',
+          opacity: 0.08,
+          position: 'absolute',
+          top: 200,
+          left: 30,
+        }}
+      >
+        <Title>{exercise.name}</Title>
+        <ImageWrapper>
+          <Image resizeMode="contain" source={{ uri: exercise.gifUrl }} />
+        </ImageWrapper>
+
+        <ExerciseDescription exercise={exercise} />
+
+        <Button
+          onPress={() => {
+            console.log(`Select where day this exercise will be favorite`);
+          }}
+        >
+          <ButtonTitle>Favorite</ButtonTitle>
+          <ButtonIcon name="star" />
+        </Button>
+      </ImageBackgroundContainer>
+    </ContainerPage>
   );
-}
+};

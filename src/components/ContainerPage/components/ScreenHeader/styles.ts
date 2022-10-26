@@ -12,7 +12,6 @@ export const Container = styled(LinearGradient)`
 export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.primary};
   font-family: ${({ theme }) => theme.fonts.regular};
-  font-weight: bold;
-  font-size: ${RFValue(20)}px;
-  line-height: ${RFValue(20)}px;
+  font-size: ${RFValue(24)}px;
+  line-height: ${RFValue(26)}px;
 `;
